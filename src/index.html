@@ -5,18 +5,26 @@
     <title>What's App Doc?</title>
   </head>
   <body>
-    <form class="doc-form">
-       <input id="name" type="text" value="" placeholder="Enter Name">
-       <input id="condition" type="text" value="" placeholder="Enter Ailment">
-      <button class='btn' type="submit">Find Doctor</button>
-    </form>
-    <p class="doctor-info"></p>
-    <p class="show-errors"></p>
-
-
+    <div class="container">
+      <div class="jumbotron">
+        <h1>What's App, Doc?</h1>
+        <img class="img-fluid" src="./assets/images/doctor office.jpg" alt="">
+        <p>The care you need, when you need it.</p>
+      </div>
+      <div class="row">
+        <div class= "col-md-6">
+          <form class="form-group doc-form">
+              <input id="name" type="text" value="" placeholder="Enter Name">
+              <input id="condition" type="text" value="" placeholder="Enter Ailment">
+              <button class='btn btn-success' type="submit">Find Doctor</button>
+          </form>
+          <p class="doctor-info"></p>
+          <p class="show-errors"></p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-fluid col-md-6" src="./assets/images/doctor.jpg" alt="">
+        </div>
+      </div>
     </div>
-
-    </div>
-
   </body>
 </html>

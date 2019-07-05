@@ -1,5 +1,8 @@
 import { BetterDoctor } from './doctor.js';
 import $ from 'jquery';
+import './css/styles.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 $(document).ready(function () {
   $('.doc-form').submit(function (event) {
@@ -26,7 +29,7 @@ $(document).ready(function () {
         <strong>Address:</strong> ${body.data[i].practices[0].visit_address.street}<br>
         <strong>Number:</strong> ${body.data[i].practices[0].phones[0].number}<br>
         <strong>Website: </strong> ${body.data[i].practices[0].website} <br>
-        <strong>Accepting New Patients:</strong> ${body.data[i].practices[0].accepts_new_patients}<br> <br>`);
+        <strong>Accepting New Patients:</strong> ${body.data[i].practices[0].accepts_new_patients}<br> <br> <hr>`);
       }
     }, function (error) {
 
