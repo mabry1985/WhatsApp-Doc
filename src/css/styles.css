@@ -1,0 +1,11 @@
+body {
+  color: yellow;
+  font-size: 20pt;
+  font-weight: bold;
+  background-color: green;
+  background-image: url("../assets/images/background.bmp");
+}
+
+img {
+  width: 200px;
+}
