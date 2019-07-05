@@ -1,7 +1,16 @@
-body {
+.logo {
+  position: relative;
+  top: 191px;
+  left: 22px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 49px;
+  color: white;
 }
 
+.container {
+  border: solid rgb(170, 211, 255) 1px;
+  height: 2186px;
+}
 
 img {
 }
-g
