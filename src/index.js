@@ -21,6 +21,7 @@ $(document).ready(function () {
       }
 
       for (let i = 0; i < body.data.length; i++) {
+
         $('.doctor-info').append(`<strong>Name:</strong> ${body.data[i].profile.first_name} ${body.data[i].profile.last_name}<br>
         <strong>Address:</strong> ${body.data[i].practices[0].visit_address.street}<br>
         <strong>Number:</strong> ${body.data[i].practices[0].phones[0].number}<br>
