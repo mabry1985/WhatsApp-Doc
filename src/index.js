@@ -1,19 +1,25 @@
-import { BetterDoctor } from './weather-service';
+import { BetterDoctor } from './doctor.js';
 import $ from 'jquery';
 
 $(document).ready(function () {
-  $('.weatherLocation').click(function () {
-    let city = $('#location').val();
-    $('#location').val('');
+  $('.doc-form').submit(function (event) {
+    event.preventDefault();
+    let nameInput = $('#name').val();
+    let conditionInput = $('#condition').val();
+    $('#name').val('');
+    $('#condition').val('');
 
-    console.log('test');
-    let doctorService = new BetterDoctor();  // create instance of WeatherService class
-    let promise = doctorService.getWeatherByCity(city);  // call the instance method and pass in user input
-    promise.then(function(response) {
+    let doctorService = new BetterDoctor();
+    let promise = doctorService.doctorSearch(nameInput, conditionInput);
+
+    promise.then(function (response) {
       let body = JSON.parse(response);
-      $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
-      $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
-    }, function(error) {
+
+      for (let i = 0; i < body.data.length; i++) {
+        $('.doctor-name').append(`${body.data[i].profile.first_name} ${body.data[i].profile.last_name}`);
+      }
+    }, function (error) {
+
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
   });
