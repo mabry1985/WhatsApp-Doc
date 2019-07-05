@@ -1,4 +1,4 @@
-import { WeatherService } from './weather-service';
+import { BetterDoctor } from './weather-service';
 import $ from 'jquery';
 
 $(document).ready(function () {
@@ -7,8 +7,8 @@ $(document).ready(function () {
     $('#location').val('');
 
     console.log('test');
-    let weatherService = new WeatherService();  // create instance of WeatherService class
-    let promise = weatherService.getWeatherByCity(city);  // call the instance method and pass in user input
+    let doctorService = new BetterDoctor();  // create instance of WeatherService class
+    let promise = doctorService.getWeatherByCity(city);  // call the instance method and pass in user input
     promise.then(function(response) {
       let body = JSON.parse(response);
       $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
